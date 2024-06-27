@@ -12,6 +12,10 @@ public class TarefaController {
 
     private TarefaService tarefaService;
 
+    public TarefaController(TarefaService tarefaService) {
+        this.tarefaService = tarefaService;
+    }
+
     @PostMapping
     List<TarefaEntity> create(@RequestBody TarefaEntity tarefaEntity){
         return tarefaService.create(tarefaEntity);
